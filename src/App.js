@@ -30,7 +30,7 @@ function App() {
     <div className="">
       <h1
         style={{ textAlign: 'center', color: '#666', textTransform: 'capitalize' }}
-      >World all countries!</h1>
+      >World all countries!!</h1>
       <SelectedCountry selectedCountry={selectedCountry} />
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center' }}>
         {
