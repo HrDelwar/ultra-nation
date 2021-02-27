@@ -1,0 +1,42 @@
+
+.details-container {
+    max-width:600px;
+    margin: 20px auto;
+    box-shadow: 2px 1px 16px 4px #666;
+    border-radius:5px
+}
+
+.details-container .image-container img{
+    width:100%;
+    max-height:300px;
+}
+.details-container .image-container {
+	max-width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.country .details {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.country .details h2{
+    color:#666;
+}
+.country .details button{
+    background:#777;
+    border:0;
+    color: #fff;
+    line-height: 1.5;
+    padding:5px 15px;
+    text-transform: uppercase;
+    border-radius:5px;
+    cursor: pointer;
+}
+.country .details button:hover, .country .details button:focus{
+    background:#666;
+    outline: none;
+}

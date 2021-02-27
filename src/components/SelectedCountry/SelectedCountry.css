@@ -1,0 +1,5 @@
+.selected-countries .count{
+    color: #666;
+    text-transform: capitalize;
+    text-align: center;      
+}
