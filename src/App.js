@@ -1,47 +1,33 @@
-
-import { useEffect, useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Country from './components/Country/Country';
-import SelectedCountry from './components/SelectedCountry/SelectedCountry';
-
+import Countries from './components/Countries/Countries';
+import CountryDetails from './components/CountryDetails/CountryDetails';
 
 function App() {
-  const [countries, setCountries] = useState([]);
-  const [selectedCountry, setSelectedCountry] = useState([]);
-  useEffect(() => {
+  const titleStyle = {
+    color: "#555",
+    textAlign: "center",
+    textTransform: "capitalize",
 
-    (async () => {
-      const response = await fetch('https://restcountries.eu/rest/v2/all');
-      const data = await response.json();
-      setCountries(data);
-    })();
-
-  }, []);
-
-  const addCountry = (country) => {
-    const newSelectedCountry = [...selectedCountry, country];
-    const removeDuplicatesCountry =
-      newSelectedCountry.reduce((countries, country) =>
-        countries.includes(country) ? countries : [...countries, country],
-        []);
-    setSelectedCountry(removeDuplicatesCountry);
   }
   return (
-    <div className="">
-      <h1
-        style={{ textAlign: 'center', color: '#666', textTransform: 'capitalize' }}
-      >World all countries is hear!</h1>
-      <SelectedCountry selectedCountry={selectedCountry} />
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', alignItems: 'center' }}>
-        {
-          countries.map(country => <Country
-            key={country.alpha3Code}
-            country={country}
-            addCountry={addCountry}
-          />)
-        }
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/country/:countryName">
+          <CountryDetails />
+        </Route>
+        <Route exact path="/">
+          <Countries />
+        </Route>
+        <Route path="*">
+          <div style={titleStyle}>
+            <h1>Page not found!</h1>
+            <h1>404</h1>
+          </div>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

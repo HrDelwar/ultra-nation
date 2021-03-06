@@ -1,0 +1,29 @@
+.country{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px
+}
+li{
+    list-style: none;
+}
+.country .country-details{
+    max-width: 800px;
+}
+.country .country-details .image-container img {
+	width: 100%;
+}
+.back {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.back button{
+    background:#666;
+    border:0;
+    border-radius:5px;
+    padding: 10px 30px;
+    color:#fff;
+    cursor: pointer;
+}
