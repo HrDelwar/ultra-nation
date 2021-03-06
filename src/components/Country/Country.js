@@ -10,7 +10,7 @@ const Country = (props) => {
                     <div className="image-container"><img src={flag} alt="" /></div>
                     <div className="details">
                         <h2 title={name.length > 15 && name}>{name.length > 15 ? name.slice(0, 12) + '...' : name}</h2>
-                        <button >add</button>
+                        <button >Details</button>
                     </div>
                 </div>
             </Link>
